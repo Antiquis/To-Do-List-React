@@ -1,12 +1,16 @@
 import React from "react";
 import { VscChromeClose } from "react-icons/vsc";
-import { Li, deleteIMG, ulList } from "../CSS/Styled";
+import { Li, checkbox, deleteIMG, ulList } from "../CSS/Styled";
 
-const TaskList = (props) => {
+const TaskList = ({ TasksList, onDelete, toggleTodoComplete, completed, id }) => {
     return (
         <ul style={ulList}>
-            <VscChromeClose onClick={() => props.onDelete(props.TasksList.id)} className="deleteIMG" style={deleteIMG} />
-            <li style={Li}>{props.TasksList.Task} {props.TasksList.completed}</li>
+            <VscChromeClose onClick={() => onDelete(id)} style={deleteIMG} />
+            <input
+                type="checkbox"
+                checked={completed} style={checkbox}
+                onChange={() => toggleTodoComplete(id)} />
+            <li style={Li}>{TasksList.Task}</li>
         </ul>
     )
 }

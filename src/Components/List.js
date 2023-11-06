@@ -2,12 +2,17 @@ import React from "react";
 import TaskList from "./TaskList";
 import { emptyList, ulTD } from "../CSS/Styled";
 
-const List = (props) => {
+const List = ({ onDelete, TasksList, toggleTodoComplete, todo}) => {
     return (
-        props.TasksList.length > 0 ? (
+        TasksList.length > 0 ? (
             (<div className="ulTD" style={ulTD}>
-                {props.TasksList.map((el) => (
-                    <TaskList onDelete={props.onDelete} key={el.id} TasksList={el} />
+                {TasksList.map((todo) => (
+                    <TaskList
+                        onDelete={onDelete}
+                        key={todo.id}
+                        TasksList={todo}
+                        toggleTodoComplete={toggleTodoComplete}
+                        {...todo} />
                 ))}
             </div>)
         ) : (
