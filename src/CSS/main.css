@@ -32,3 +32,6 @@ body {
     transform: scale(1.1);
     background: #7971eb49;
 }
+input:checked + li {
+    text-decoration: line-through;
+}
