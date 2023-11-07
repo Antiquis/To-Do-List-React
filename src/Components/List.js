@@ -1,17 +1,16 @@
-import React from "react";
+import { useSelector } from "react-redux";
 import TaskList from "./TaskList";
 import { emptyList, ulTD } from "../CSS/Styled";
 
-const List = ({ onDelete, TasksList, toggleTodoComplete, todo}) => {
+const List = () => {
+const todoR = useSelector(state => state.todoR.todoR)
+
     return (
-        TasksList.length > 0 ? (
+        todoR.length > 0 ? (
             (<div className="ulTD" style={ulTD}>
-                {TasksList.map((todo) => (
+                {todoR.map((todo) => (
                     <TaskList
-                        onDelete={onDelete}
                         key={todo.id}
-                        TasksList={todo}
-                        toggleTodoComplete={toggleTodoComplete}
                         {...todo} />
                 ))}
             </div>)

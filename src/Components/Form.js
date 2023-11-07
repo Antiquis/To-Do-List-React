@@ -1,4 +1,3 @@
-import React from "react";
 import { Forma, buttonStyle, inputTDL } from "../CSS/Styled"
 
 const Form = ({onAdd, Task, text}) => {

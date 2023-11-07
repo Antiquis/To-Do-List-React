@@ -69,7 +69,6 @@ export const emptyList = {
 }
 export const ulList = {
     display: "grid",
-    maxWidth: "1000px",
     gridTemplateAreas: `"ListTD checkbox deleteIMG" `,
     margin: "0px 0px 10px 0px",
     gridTemplateColumns: "1fr",
